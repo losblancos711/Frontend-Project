@@ -81,10 +81,9 @@
                         </div> -->
                     </div>
                     <div id="map-view" class="tab-pane fade">
-                        <!-- <img src="https://cdn.pixabay.com/photo/2018/01/31/05/43/web-3120321_960_720.png"> -->
-                        <div id="map"></div>
-                        <script async defer
-                       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGMORlLc7i0T-uN9p6XZn_gdry1PUWvUQ&callback=initMap
+                        
+                        <!-- <script async defer
+                       src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap
                        "></script>
                         <script>
                         var map;
@@ -94,7 +93,29 @@
                         zoom: 8
                         });
                         }
-                        </script>
+                        </script> -->
+                        <div id="map" style="height: 400px;"></div>
+                  <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCgtF5UdlD6anHmwC229pKB8ZhUMfSwq9k"></script>
+                  <script>
+                    function initialize() {
+                      var map = new google.maps.Map(
+                        document.getElementById('map'), {
+                          center: new google.maps.LatLng(37.4419, -122.1419),
+                          zoom: 13,
+                          mapTypeId: google.maps.MapTypeId.ROADMAP
+                      });
+                
+                      var marker = new google.maps.Marker({
+                            position: new google.maps.LatLng(37.4419, -122.1419),
+                            map: map
+                      });
+                
+                    }
+                    google.maps.event.addDomListener(window, 'load', initialize);
+                    </script>
+
+  
+
                     </div>
                 </div>
             </div>
